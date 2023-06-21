@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                         },
                         {
                             match: "ENDERECO_DO_JS",
-                            replacement: "../scripts/main.min.js"
+                            replacement: "./scripts/main.min.js"
                         }
                     ]
                 },
@@ -88,21 +88,21 @@ module.exports = function (grunt) {
                 }
             }
         }
-        // ,
-        // sass: {
-        //     dist: {
-        //         files: {
-        //             styles: 'compressed'
-        //         },
-        //         files: {
-        //             'main2.min.css': 'main2.scss'
-        //         }
-        //     }
-        // },
-        // concurrent: {
-        //     target: ['olaMiguelGrunt', 'less', 'sass']
-        // }
     })
+    // ,
+    // sass: {
+    //     dist: {
+    //         files: {
+    //             styles: 'compressed'
+    //         },
+    //         files: {
+    //             'main2.min.css': 'main2.scss'
+    //         }
+    //     }
+    // },
+    // concurrent: {
+    //     target: ['olaMiguelGrunt', 'less', 'sass']
+    // }
 
     // grunt.registerTask('olaMiguelGrunt', function () {
     //     const done = this.async();
@@ -124,5 +124,5 @@ module.exports = function (grunt) {
     // grunt.loadNpmTasks('grunt-concurrent');
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean']);
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
 }
